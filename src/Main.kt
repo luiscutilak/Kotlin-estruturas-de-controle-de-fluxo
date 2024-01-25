@@ -60,7 +60,7 @@ class MyClass
  */
 
 //******************************* LOOPS - FOR (ESTRUTURAS DE REPETIÇÃO)**************************************
-
+/*
 fun main() {
 
     val cakes = listOf("carrot", "cheese", "chocolate")
@@ -68,3 +68,6 @@ fun main() {
         println("Yammii its a ${cake} cake!")
     }
 }
+
+ */
+
