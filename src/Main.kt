@@ -39,6 +39,7 @@ class MyClass
 
 //*********************  WHEN EXPRESSION - parecido com switch/case ********************************
 
+/*
 fun main() {
     println(whenAssign("Hello"))
     println(whenAssign(3.4))
@@ -56,3 +57,14 @@ fun whenAssign(obj: Any): Any {
 }
 
 class MyClass
+ */
+
+//******************************* LOOPS - FOR (ESTRUTURAS DE REPETIÇÃO)**************************************
+
+fun main() {
+
+    val cakes = listOf("carrot", "cheese", "chocolate")
+    for(cake in cakes) {
+        println("Yammii its a ${cake} cake!")
+    }
+}
