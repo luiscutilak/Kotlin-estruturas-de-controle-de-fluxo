@@ -97,7 +97,7 @@ fun main() {
  */
 
 //****************************** ITERATORS *********************************************
-
+/*
 class Animal(val name: String)
 class Zoo(val animals: List<Animal>) {
 
@@ -114,4 +114,29 @@ fun main() {
     for (animal in zoo) {
         println("Watch out, it's a ${animal.name}")
     }
+}
+*/
+
+//************************************ RANGES ***************************************
+
+fun main() {
+
+    for(i in 0..3) {      // menor igual a 3 ;
+        print(i)
+    }
+    print(" ")
+
+    for(i in 0 until 3) { // menor que 3;
+        print(i)
+    }
+    print(" ")
+
+    for(i in 2..8 step 2) { // de 2 até 8 de 2 em 2, ou seja INCREMENTOS DE 2 em 2;
+        println(i)
+    }
+
+    for(i in 3 downTo 0) { // de 3 DECREMEMTAMDO até ZERO, ou seja  3, 2, 1, 0 ;
+    println(i)
+    }
+
 }
