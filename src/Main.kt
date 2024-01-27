@@ -117,8 +117,10 @@ fun main() {
 }
 */
 
-//************************************ RANGES ***************************************
+//************************************ RANGES Loops com INT ***************************************
 
+
+/*
 fun main() {
 
     for(i in 0..3) {      // menor igual a 3 ;
@@ -138,5 +140,103 @@ fun main() {
     for(i in 3 downTo 0) { // de 3 DECREMEMTAMDO até ZERO, ou seja  3, 2, 1, 0 ;
     println(i)
     }
+
+}
+*/
+
+//***************************************** Ranges: If's e loops com Char *************************************
+
+/*
+fun main() {    //no range com letras funciona da mesma forma do que com numeros.
+
+    for (c in 'a'..'d') {    // aqui ele ira imprimir , abcd , ou seja todo intervalo de "a" até "d"
+        print(c)
+
+    }
+    print(" ")
+
+    for (c in 'z' downTo 's' step 2) { // aqui o 'for' esta DECREMENTANDO de "z" a "s" de 2 em dois, printando "zxvt"
+        print(c)
+    }
+
+    val x= 2;
+    if(x in 1..5) {
+        print("x is in range from 1 to 5") // x esta no intervalo de 1 a 5? ou seja podemos usar a condicional para iterar (range = intervalo)
+    }
+
+    if(x !in 6..10) {
+        print("x is not in range from 6 to 10")
+    }
+
+}
+
+*/
+//***************************************** VERIFICAÇÃO DE IGUALDADE (EQUALITY CHECKS) *********************************
+
+ //  ==  COmpara a estrutura dos objetos
+// === Compara a mesma referencia em memória
+
+// fun main() {
+// //setOf não aceita valores iguais no array
+// val authors = setOf("Shakespeare", "Hemingway", "Twain");
+// val writers = setOf("Twain", "Shakespeare", "Hemingway");
+//
+// println(authors == writers);
+// println(authors === writers);
+// }
+//
+//
+// //********************************** EXPRESSÂO CONDICIONAL (CONDITIONAL EXPRESSIONAL _ )*********************************************
+//
+//
+///*
+// fun main() {
+// fun max(a: Int, b: Int) = if (a > b) a else b
+//
+// println(max(99, -42))
+// }
+// /*
+
+//************************************ LISTAS (LIST) ******************************************************************
+/*
+val systemUsers: MutableList<Int> = mutableListOf(1, 2, 3) // Criação da lista mutavel com os valores e sendo atribuida a variavel imutavel "  val  "
+val sudoers: List<Int> = systemUsers;  //  criada uma cópia para somente LEITURA
+
+fun addSystemUser(newUser: Int) {
+    systemUsers.add(newUser)
+}
+
+fun getSysSudoers(): List<Int> {
+    return sudoers
+}
+
+fun main() {
+    addSystemUser(4);
+    println("Tot sudoers: ${getSysSudoers().size}");
+    getSysSudoers().forEach { i -> println("Some useful info on user $i") }
+}
+
+ */
+
+//************************************************** CONJUNTOS ( SET ) *********************************
+
+//Set não são ordenados e não aceita objetos duplicados.
+
+val openIssues: MutableSet<String> = mutableSetOf("uniqueDescr1", "uniqueDescr2", "uniqueDescr3")
+
+fun addIssue(uniqueDesc: String): Boolean {
+    return openIssues.add(uniqueDesc)
+}
+
+fun getStatusLog(isAdded: Boolean): String {
+    return if(isAdded) "registered correctly." else "marked as duplicate and rejected."
+}
+
+fun main() {
+    val aNewIssue: String = "uniqueDescr4";
+    val anIssueAlreadyIn: String = "uniqueDescr2";
+
+    println("Issue $aNewIssue ${getStatusLog(addIssue(aNewIssue))}");
+    println("Issue $anIssueAlreadyIn ${getStatusLog(addIssue(anIssueAlreadyIn))}");
 
 }
