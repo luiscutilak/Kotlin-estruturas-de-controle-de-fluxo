@@ -221,7 +221,7 @@ fun main() {
 //************************************************** CONJUNTOS ( SET ) *********************************
 
 //Set não são ordenados e não aceita objetos duplicados.
-
+/*
 val openIssues: MutableSet<String> = mutableSetOf("uniqueDescr1", "uniqueDescr2", "uniqueDescr3")
 
 fun addIssue(uniqueDesc: String): Boolean {
@@ -240,3 +240,62 @@ fun main() {
     println("Issue $anIssueAlreadyIn ${getStatusLog(addIssue(anIssueAlreadyIn))}");
 
 }
+
+ */
+
+// *********************************************** MAP **********************************
+
+//PS: Funções de inicialização -> mapOf() , setOf, mutableOf, mutableMapOf()  ...
+
+
+const val POINTS_X_PASS: Int = 15 // constant imutavel, ex: pontos de uma viagem por exemplo
+val EZPassAccounts: MutableMap<Int, Int> = mutableMapOf(1 to 100, 2 to 100, 3 to 100) // array mutavel, de chave e valor, tres valores do mapa. VALORES COM CHAVE = Id, VALOR = PONTOS
+val EZPassReport: Map<Int, Int> = EZPassAccounts   // variavel somente leitura, uma ótima pedida para gerar relatórios por exemplo.
+
+//Abaixo ira conferir se o Id existe, e se existir, pegar os pontos ja contidos na conta e somar aos novos pontos.
+fun updatePointsCredit(accountId: Int) {
+    if (EZPassAccounts.containsKey(accountId)) {  // se a conta conter a chave Id
+        println("Updating $accountId...")
+        EZPassAccounts[accountId] =
+            EZPassAccounts.getValue(accountId) + POINTS_X_PASS // Pegar o valor da conta e somar com os pontos(15)
+    } else {
+        println("Error: Trying to update a non-existing account (id: $accountId)")
+
+    }
+
+}
+
+//Abaixo função que imprime relatório de contas
+fun accountsReport() {
+    println("EZ-Pass report:")
+    EZPassReport.forEach {
+        k, v -> println("ID $k: credit $v")  // for Each percorre nossa lista de pontos do Id e gera um relatório com chave e valor .
+    }
+}
+
+fun main() {
+    accountsReport()
+    updatePointsCredit(1)
+    updatePointsCredit(1)
+    updatePointsCredit(5)
+    accountsReport()
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
